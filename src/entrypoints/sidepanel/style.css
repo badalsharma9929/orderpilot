@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens taken from order-shipment-dashboard/style.css so both tools look like one product. */
+:root {
+  color-scheme: light;
+  --bg: 249 249 247;
+  --surface: 255 255 255;
+  --raised: 252 252 251;
+  --line: 225 224 217;
+  --ink: 11 11 11;
+  --muted: 82 81 78;
+  --brand: 42 120 214;
+  --good: 12 140 12;
+  --warn: 196 132 0;
+  --bad: 208 59 59;
+  --info: 27 175 122;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: 13 13 13;
+    --surface: 23 23 22;
+    --raised: 26 26 25;
+    --line: 44 44 42;
+    --ink: 255 255 255;
+    --muted: 195 194 183;
+    --brand: 57 135 229;
+    --good: 40 190 40;
+    --warn: 250 178 25;
+    --bad: 230 103 103;
+    --info: 25 158 112;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: 13 13 13;
+  --surface: 23 23 22;
+  --raised: 26 26 25;
+  --line: 44 44 42;
+  --ink: 255 255 255;
+  --muted: 195 194 183;
+  --brand: 57 135 229;
+  --good: 40 190 40;
+  --warn: 250 178 25;
+  --bad: 230 103 103;
+  --info: 25 158 112;
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-bg text-ink font-sans text-[13px] antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--brand)); outline-offset: 2px; }
+.tabular { font-variant-numeric: tabular-nums; }
